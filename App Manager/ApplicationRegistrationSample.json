@@ -1,0 +1,86 @@
+{
+  "id": "3d0223ad-bfd8-4d91-99a6-8f6f1ed13ae9",
+  "deletedDateTime": null,
+  "appId": "a86d44e5-8b82-45ea-81a4-ab950881b8c8",
+  "applicationTemplateId": null,
+  "disabledByMicrosoftStatus": null,
+  "createdDateTime": "2021-04-23T14:26:29Z",
+  "displayName": "Programmatic App 8",
+  "description": null,
+  "groupMembershipClaims": null,
+  "identifierUris": [],
+  "isDeviceOnlyAuthSupported": null,
+  "isFallbackPublicClient": null,
+  "notes": null,
+  "optionalClaims": null,
+  "publisherDomain": "mmoeller.onmicrosoft.com",
+  "signInAudience": "AzureADMyOrg",
+  "tags": [],
+  "tokenEncryptionKeyId": null,
+  "verifiedPublisher": {
+    "displayName": null,
+    "verifiedPublisherId": null,
+    "addedDateTime": null
+  },
+  "defaultRedirectUri": null,
+  "addIns": [],
+  "api": {
+    "acceptMappedClaims": null,
+    "knownClientApplications": [],
+    "requestedAccessTokenVersion": null,
+    "oauth2PermissionScopes": [],
+    "preAuthorizedApplications": []
+  },
+  "appRoles": [
+    {
+      "allowedMemberTypes": [
+        "User"
+      ],
+      "description": "For Reviewer",
+      "displayName": "Reviewer",
+      "id": "7a1a465a-8eb7-4f56-bf10-4a60f4b2d9f8",
+      "isEnabled": true,
+      "origin": "Application",
+      "value": null
+    }
+  ],
+  "info": {
+    "logoUrl": null,
+    "marketingUrl": null,
+    "privacyStatementUrl": null,
+    "supportUrl": null,
+    "termsOfServiceUrl": null
+  },
+  "keyCredentials": [],
+  "parentalControlSettings": {
+    "countriesBlockedForMinors": [],
+    "legalAgeGroupRule": "Allow"
+  },
+  "passwordCredentials": [
+    {
+      "customKeyIdentifier": null,
+      "displayName": null,
+      "endDateTime": "2022-04-23T14:26:30.834913Z",
+      "hint": "8.j",
+      "keyId": "8fa0b403-b03a-41ad-a55a-48b0095050df",
+      "secretText": null,
+      "startDateTime": "2021-04-23T14:26:30.8348502Z"
+    }
+  ],
+  "publicClient": {
+    "redirectUris": []
+  },
+  "requiredResourceAccess": [],
+  "web": {
+    "homePageUrl": null,
+    "logoutUrl": null,
+    "redirectUris": [],
+    "implicitGrantSettings": {
+      "enableAccessTokenIssuance": false,
+      "enableIdTokenIssuance": false
+    }
+  },
+  "spa": {
+    "redirectUris": []
+  }
+}

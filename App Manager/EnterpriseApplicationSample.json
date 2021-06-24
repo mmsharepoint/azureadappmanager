@@ -1,0 +1,99 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
+  "id": "0d972ac3-f3bd-49b4-8dd8-c52faf1a31f7",
+  "deletedDateTime": null,
+  "appId": "c8ac0d67-ba17-4ec4-8fc4-30220ff86e71",
+  "applicationTemplateId": "8adf8e6e-67b2-4cf2-a259-e3dc5476c621",
+  "disabledByMicrosoftStatus": null,
+  "createdDateTime": "2021-04-26T09:57:42Z",
+  "displayName": "Programmatic Enterprise App (Template)",
+  "description": null,
+  "groupMembershipClaims": null,
+  "identifierUris": [],
+  "isDeviceOnlyAuthSupported": null,
+  "isFallbackPublicClient": false,
+  "notes": null,
+  "optionalClaims": null,
+  "publisherDomain": "mmoeller.onmicrosoft.com",
+  "signInAudience": "AzureADMyOrg",
+  "tags": [],
+  "tokenEncryptionKeyId": null,
+  "verifiedPublisher": {
+    "displayName": null,
+    "verifiedPublisherId": null,
+    "addedDateTime": null
+  },
+  "defaultRedirectUri": null,
+  "addIns": [],
+  "api": {
+    "acceptMappedClaims": null,
+    "knownClientApplications": [],
+    "requestedAccessTokenVersion": null,
+    "oauth2PermissionScopes": [
+      {
+        "adminConsentDescription": "Allow the application to access Programmatic Enterprise App (Template) on behalf of the signed-in user.",
+        "adminConsentDisplayName": "Access Programmatic Enterprise App (Template)",
+        "id": "5e4936a9-f755-45f3-b63c-eb71e0111605",
+        "isEnabled": true,
+        "type": "User",
+        "userConsentDescription": "Allow the application to access Programmatic Enterprise App (Template) on your behalf.",
+        "userConsentDisplayName": "Access Programmatic Enterprise App (Template)",
+        "value": "user_impersonation"
+      }
+    ],
+    "preAuthorizedApplications": []
+  },
+  "appRoles": [
+    {
+      "allowedMemberTypes": [
+        "User"
+      ],
+      "description": "User",
+      "displayName": "User",
+      "id": "18d14569-c3bd-439b-9a66-3a2aee01d14f",
+      "isEnabled": true,
+      "origin": "Application",
+      "value": null
+    },
+    {
+      "allowedMemberTypes": [
+        "User"
+      ],
+      "description": "msiam_access",
+      "displayName": "msiam_access",
+      "id": "b9632174-c057-4f7e-951b-be3adc52bfe6",
+      "isEnabled": true,
+      "origin": "Application",
+      "value": null
+    }
+  ],
+  "info": {
+    "logoUrl": null,
+    "marketingUrl": null,
+    "privacyStatementUrl": null,
+    "supportUrl": null,
+    "termsOfServiceUrl": null
+  },
+  "keyCredentials": [],
+  "parentalControlSettings": {
+    "countriesBlockedForMinors": [],
+    "legalAgeGroupRule": "Allow"
+  },
+  "passwordCredentials": [],
+  "publicClient": {
+    "redirectUris": []
+  },
+  "requiredResourceAccess": [],
+  "web": {
+    "homePageUrl": "https://account.activedirectory.windowsazure.com:444/applications/default.aspx?metadata=customappsso|ISV9.1|primary|z",
+    "logoutUrl": null,
+    "redirectUris": [],
+    "implicitGrantSettings": {
+      "enableAccessTokenIssuance": false,
+      "enableIdTokenIssuance": true
+    }
+  },
+  "spa": {
+    "redirectUris": []
+  }
+}
