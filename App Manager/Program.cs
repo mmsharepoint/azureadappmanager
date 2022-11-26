@@ -11,7 +11,7 @@ namespace App_Manager
 {
   class Program
   {
-    private static string mode = "Template"; // Template else Registration?
+    private static string mode = "Registration"; // Template else Registration?
     
     static void Main(string[] args)
     {
@@ -41,28 +41,39 @@ namespace App_Manager
         {       
           app = clientController.CreateApplication(appName).Result;
           appID = app.AppId;
-          Console.WriteLine("App created with AppID {0} and name {1}", appID, appName);
+          Console.WriteLine("App created with AppID {0} app object id {1} and name {2}", appID, app.Id, appName);
 
           principalID = clientController.CreateServicePrincipal(appID).Result;
           Console.WriteLine("ServicePrincipal created created for App with AppID {0} and name {1}", appID, appName);
         }
        
-        string roleAssgnmID = clientController.AddUnifiedRoleAssignment(customRoleDefinitionId, principalID, userLogin).Result;
-        Console.WriteLine("Role Id {0} assigned to user {1} for App with name {2}", customRoleDefinitionId, userLogin, appName);
-        string roleAssgnm2ID = clientController.AddUnifiedRoleAssignment(customRoleDefinitionId, app.Id, userLogin).Result;
-        Console.WriteLine("Role Id {0} assigned to user {1} for Service Principal with name {2}", customRoleDefinitionId, userLogin, appName);
+        //string roleAssgnmID = clientController.AddUnifiedRoleAssignment(customRoleDefinitionId, principalID, userLogin).Result;
+        //Console.WriteLine("Role Id {0} assigned to user {1} for App with name {2}", customRoleDefinitionId, userLogin, appName);
+        //string roleAssgnm2ID = clientController.AddUnifiedRoleAssignment(customRoleDefinitionId, app.Id, userLogin).Result;
+        //Console.WriteLine("Role Id {0} assigned to user {1} for Service Principal with name {2}", customRoleDefinitionId, userLogin, appName);
 
-        bool claimsPolicyAssgnd = clientController.AssignClaimsMappingPolicy(principalID).Result;
-        if (claimsPolicyAssgnd)
-        {
-          Console.WriteLine("Claims Policy assigned to Service Principal with ID {0} and name {1}", principalID, appName);
-        }
+        //bool claimsPolicyAssgnd = clientController.AssignClaimsMappingPolicy(principalID).Result;
+        //if (claimsPolicyAssgnd)
+        //{
+        //  Console.WriteLine("Claims Policy assigned to Service Principal with ID {0} and name {1}", principalID, appName);
+        //}
 
-        bool capPolicyAssgnd = clientController.AssignConditionalAccessPolicy(appID).Result;
-        if (capPolicyAssgnd)
+        string addOwnerID = "48aee9c1-2988-4a86-a791-2a563f6fd62d"; // cclausen
+        bool appOwnerAssigned = clientController.AssignAdditionalOwnerToApp(addOwnerID, app.Id).Result;
+        if (appOwnerAssigned)
         {
-          Console.WriteLine("Conditional Access Policy assigned to App with AppID {0} and name {1}", appID, appName);
+          Console.WriteLine("User with ID {0} added to application object with ID {1} as additional owner", addOwnerID, app.Id);
         }
+        bool spOwnerAssigned = clientController.AssignAdditionalOwnerToApp(addOwnerID, principalID).Result;
+        if (appOwnerAssigned)
+        {
+          Console.WriteLine("User with ID {0} added to service principal with ID {1} as additional owner", addOwnerID, principalID);
+        }
+        //bool capPolicyAssgnd = clientController.AssignConditionalAccessPolicy(appID).Result;
+        //if (capPolicyAssgnd)
+        //{
+        //  Console.WriteLine("Conditional Access Policy assigned to App with AppID {0} and name {1}", appID, appName);
+        //}
         Console.ReadLine();
       }
     }

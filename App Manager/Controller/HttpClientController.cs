@@ -180,6 +180,42 @@ namespace App_Manager.Controller
       }
     }
 
+    public async Task<bool> AssignAdditionalOwnerToApp(string addOwnerId, string appId)
+    {
+      Uri uri = new Uri(String.Format("https://graph.microsoft.com/v1.0//applications/{0}/owners/$ref", appId));
+      string json = @"{ '@odata.id': 'https://graph.microsoft.com/v1.0/directoryObjects/" + addOwnerId + "' }";
+      var data = new StringContent(json, Encoding.UTF8, "application/json");
+      var httpResult = await httpClient.PostAsync(uri, data);
+      if (httpResult.StatusCode == HttpStatusCode.NoContent)
+      {
+        return true;
+      }
+      else
+      {
+        string result = await httpResult.Content.ReadAsStringAsync();
+        Console.WriteLine("Error: " + result);
+        return false;
+      }
+    }
+
+    public async Task<bool> AssignAdditionalOwnerToSP(string addOwnerId, string prinicipalID)
+    {
+      Uri uri = new Uri(String.Format("https://graph.microsoft.com/v1.0//servicePrincipals/{0}/owners/$ref", prinicipalID));
+      string json = @"{ '@odata.id': 'https://graph.microsoft.com/v1.0/directoryObjects/" + addOwnerId + "' }";
+      var data = new StringContent(json, Encoding.UTF8, "application/json");
+      var httpResult = await httpClient.PostAsync(uri, data);
+      if (httpResult.StatusCode == HttpStatusCode.NoContent)
+      {
+        return true;
+      }
+      else
+      {
+        string result = await httpResult.Content.ReadAsStringAsync();
+        Console.WriteLine("Error: " + result);
+        return false;
+      }
+    }
+
     public async Task<bool> AssignConditionalAccessPolicy(string appID)
     {
       string policyID = "78bd0c80-bbed-4d76-9e24-84c31b1101c3"; // Siemens Demo "Policy_TrustedDevice_AppA"
